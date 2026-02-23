@@ -1,0 +1,424 @@
+@font-face {
+    font-family: 'Quattrocento';
+    src: url('fonts/quattrocento-v24-latin-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Quattrocento';
+    src: url('fonts/quattrocento-v24-latin-700.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Google Sans Font */
+@font-face {
+    font-family: 'Google Sans Flex';
+    src: url('fonts/google-sans-flex-v16-latin-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Google Sans Flex';
+    src: url('fonts/google-sans-flex-v16-latin-500.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Google Sans Flex';
+    src: url('fonts/google-sans-flex-v16-latin-600.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Google Sans Flex';
+    src: url('fonts/GoogleSansFlex-Bold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg: #F5F5EE;
+    --color-text: #1A1A1A;
+    --color-blue: #052FE6;
+    --color-gray: #4e4c4c;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Quattrocento', sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.gveret-levin-regular {
+  font-family: "Gveret Levin", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-bg);
+    z-index: 1000;
+}
+
+.nav-container {
+    margin: 0 auto;
+    padding: 3rem 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: 
+    repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 100px,
+        rgba(0, 0, 0, 0.03) 100px,
+        rgba(0, 0, 0, 0.03) 101px
+    );
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-left {
+    justify-content: flex-start;
+}
+
+.nav-right {
+    justify-content: flex-end;
+}
+
+.nav-center {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    animation: spinY 8s linear infinite;
+}
+
+@keyframes spinY {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.logo-text {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--color-blue);
+    white-space: nowrap;
+    font-family: 'Gveret Levin', cursive;
+}
+
+.nav-link {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 400;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--color-blue);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    text-align: center;
+    position: relative;
+    background-image: 
+    repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 100px,
+        rgba(0, 0, 0, 0.03) 100px,
+        rgba(0, 0, 0, 0.03) 101px
+    );
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/robotarm2.png');
+    background-size: 20%;  /* or 'cover' to fill entire area */
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.20;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    padding: 4rem 2rem;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 2rem;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--color-gray);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    background: #052FE6;
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(5, 47, 230, 0.3);
+}
+
+.cta-button:active {
+    transform: scale(0.98);
+}
+
+.cta-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.cta-icon {
+    width: 32px;
+    height: 32px;
+    opacity: 0.7;
+}
+
+.cta-button:hover .cta-icon {
+    transform: translateX(4px);
+}
+
+.cta-button:hover svg {
+    transform: translateX(4px);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 6rem 2rem;
+    background: white;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-container h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.contact-container p {
+    font-size: 1.125rem;
+    color: var(--color-gray);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+.contact-form {
+    display: flex;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+    font-family: 'Google Sans Flex', sans-serif;
+    transition: border-color 0.2s;
+}
+
+.contact-form input:focus {
+    outline: none;
+    border-color: var(--color-blue);
+}
+
+.submit-btn {
+    padding: 1rem 2rem;
+    background: var(--color-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: 'Google Sans Flex', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.submit-btn:hover {
+    background: #0422B8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(5, 47, 230, 0.2);
+}
+
+/* Footer */
+.footer {
+    background: var(--color-text);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-container p {
+    margin: 0.5rem 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .nav-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem 2rem;
+    }
+
+    .nav-left,
+    .nav-right {
+        justify-content: center;
+    }
+
+    .nav-center {
+        order: -1;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .nav-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .nav-left,
+    .nav-right {
+        gap: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
+    }
+
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .hero-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .contact-form {
+        flex-direction: column;
+    }
+
+    .contact-container h2 {
+        font-size: 2rem;
+    }
+}
